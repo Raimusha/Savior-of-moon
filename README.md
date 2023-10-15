@@ -23,11 +23,3 @@ The moon's inexplicable journey towards the Sun is at the heart of our tale. As 
 ## 🎯 Audience
 
 Designed for players of all backgrounds and ages. Whether you're a novice just looking for an engaging game to pass the time or a seasoned gamer searching for a compelling story, "Savior of the Moon" promises an unforgettable experience.
-
-
-
-This project is licensed under the [LICENSE NAME](path/to/your/LICENSE) - see the LICENSE file for details. *(Replace with the actual path and name of your license)*
-
----
-
-This README provides an overview of your game. You can expand on certain sections, add images, or include other details as needed. Adjust the paths provided to match your repository's structure if you have images, licenses, or other contributing documents.
