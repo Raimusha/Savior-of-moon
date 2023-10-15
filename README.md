@@ -1,6 +1,3 @@
-Certainly! Here's a simple README for your game repository on GitHub:
-
----
 
 # Savior of the Moon 🌕
 
