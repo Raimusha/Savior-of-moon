@@ -27,21 +27,7 @@ The moon's inexplicable journey towards the Sun is at the heart of our tale. As 
 
 Designed for players of all backgrounds and ages. Whether you're a novice just looking for an engaging game to pass the time or a seasoned gamer searching for a compelling story, "Savior of the Moon" promises an unforgettable experience.
 
-## 🖥️ System Requirements
 
-*Coming Soon* 
-*(You can provide details on the minimum and recommended system requirements for playing the game here)*
-
-## 📥 Installation
-
-*Details on how to install the game will be provided soon.*
-*(You can provide a guide or link to where users can download or buy the game)*
-
-## 🤝 Contributing
-
-Contributions are welcome! Please see our [CONTRIBUTING.md](path/to/your/CONTRIBUTING.md) for details. *(Replace with the actual path to your contributing guidelines if you have one)*
-
-## 📜 License
 
 This project is licensed under the [LICENSE NAME](path/to/your/LICENSE) - see the LICENSE file for details. *(Replace with the actual path and name of your license)*
 
