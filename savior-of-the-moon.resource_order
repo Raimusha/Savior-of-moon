@@ -18,6 +18,13 @@
   ],
   "ResourceOrderSettings": [
     {"name":"oWall","order":1,"path":"objects/oWall/oWall.yy",},
+    {"name":"sPlayerPowerSpin","order":7,"path":"sprites/sPlayerPowerSpin/sPlayerPowerSpin.yy",},
+    {"name":"sPlayerPower","order":6,"path":"sprites/sPlayerPower/sPlayerPower.yy",},
     {"name":"sBlock","order":1,"path":"sprites/sBlock/sBlock.yy",},
+    {"name":"Sprite8","order":8,"path":"sprites/Sprite8/Sprite8.yy",},
+    {"name":"sArmorOrb","order":2,"path":"sprites/sArmorOrb/sArmorOrb.yy",},
+    {"name":"sPlayer","order":4,"path":"sprites/sPlayer/sPlayer.yy",},
+    {"name":"sPlayerSpin","order":5,"path":"sprites/sPlayerSpin/sPlayerSpin.yy",},
+    {"name":"sNoArmorOrb","order":3,"path":"sprites/sNoArmorOrb/sNoArmorOrb.yy",},
   ],
 }

@@ -34,10 +34,16 @@
     "IDEVersion": "2023.8.2.106",
   },
   "resources": [
-    {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},},
+    {"id":{"name":"sPlayerPowerSpin","path":"sprites/sPlayerPowerSpin/sPlayerPowerSpin.yy",},},
+    {"id":{"name":"sPlayerPower","path":"sprites/sPlayerPower/sPlayerPower.yy",},},
     {"id":{"name":"sBlock","path":"sprites/sBlock/sBlock.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
+    {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
+    {"id":{"name":"sArmorOrb","path":"sprites/sArmorOrb/sArmorOrb.yy",},},
+    {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
+    {"id":{"name":"sPlayerSpin","path":"sprites/sPlayerSpin/sPlayerSpin.yy",},},
+    {"id":{"name":"sNoArmorOrb","path":"sprites/sNoArmorOrb/sNoArmorOrb.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [

@@ -40,3 +40,22 @@ if (place_meeting(x,y+vsp,oWall))
 	vsp = 0;
 }
 y = y + vsp;
+
+// Detect if there is player movement input
+if (keyboard_check(vk_left) || keyboard_check(vk_right) || keyboard_check(vk_up) || keyboard_check(vk_down)) {
+	isMoving = true;	
+} else {
+	isMoving = false;
+}
+
+// Change sprite and rotation based on movement
+if (isMoving) {
+	// Set the spinning sprite and rotation
+	sprite_index = sPlayerSpin; // Replace with spinning sprite name
+	image_angle += rotation_speed;
+	
+} else {
+	// Set to idle sprite and reset rotation
+	sprite_index = sPlayer; // replace with your idle sprite name
+	image_angle = 0;
+}
