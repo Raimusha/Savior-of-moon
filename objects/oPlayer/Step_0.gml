@@ -9,13 +9,37 @@ key_jump = keyboard_check_pressed(vk_space);
 
 
 //Calculate Movement
-var move = key_right - key_left;
-hsp = move * walksp;
-vsp = vsp + grv;
+// Horizontal movement
+if (keyboard_check(vk_left) || keyboard_check(ord("A"))) {
+    hsp = -move_speed;
+}
+if (keyboard_check(vk_right) || keyboard_check(ord("D"))) {
+    hsp = move_speed;
+}
+
+// Vertical movement
+if (keyboard_check(vk_up) || keyboard_check(ord("W"))) {
+    vsp = -move_speed;
+}
+if (keyboard_check(vk_down) || keyboard_check(ord("S"))) {
+    vsp = move_speed;
+}
+
+// Apply the speeds to the player's position
+x += hsp;
+y += vsp;
+
+// Apply friction
+hsp *= 0.95; // Horizontal friction
+vsp *= 0.95; // Vertical friction
+
+
+
+
 
 if (place_meeting(x,y+1, oWall)) && (key_jump)
 {
-	vsp = -7;
+	vsp = 0;
 		
 }
 
