@@ -3,7 +3,7 @@
 hsp = 0;
 vsp = 0;
 //grv = 0.7;
-move_speed = 3;
+move_speed = 5;
 // check for player movement
 isMoving = false;
 //Speed the player object rotates

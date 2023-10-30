@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "s_background",
-  "bbox_bottom": 1999,
+  "name": "Sprite15",
+  "bbox_bottom": 63,
   "bbox_left": 0,
-  "bbox_right": 3555,
+  "bbox_right": 63,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,26 +13,26 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8ed4a907-9bf9-482b-bf92-2d11319a8c38",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d5b0cdcd-47d9-46cf-bc6a-3de8393aa8ad",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 2000,
+  "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"b3851820-bce6-4498-ae5a-d54460ef6538","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ecb60da9-4a34-4bf6-a313-391afa2eb872","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "savior-of-the-moon",
+    "path": "savior-of-the-moon.yyp",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "s_background",
+    "name": "Sprite15",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8ed4a907-9bf9-482b-bf92-2d11319a8c38","path":"sprites/s_background/s_background.yy",},},},"Disabled":false,"id":"08565bf4-43b3-4fb5-8087-598974cb8ec7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d5b0cdcd-47d9-46cf-bc6a-3de8393aa8ad","path":"sprites/Sprite15/Sprite15.yy",},},},"Disabled":false,"id":"fc7688a4-e9dc-4f3a-93ed-bcfb7e095510","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 3556,
+  "width": 64,
 }
