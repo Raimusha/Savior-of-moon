@@ -3,3 +3,6 @@ speed = 4; // You can adjust this to your liking
 
 // Set the initial movement direction
 direction = 0; // This will start the enemy moving to the right. 0 means right, 180 means left.
+
+//image_yscale = 2;
+//image_xscale = 2;

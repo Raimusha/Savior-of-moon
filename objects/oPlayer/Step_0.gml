@@ -1,14 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-//Get player input
+// Get player input
 key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
 key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
 key_jump = keyboard_check_pressed(vk_space);
 
-
-//Calculate Movement
+// Calculate Movement
 // Horizontal movement
 if (keyboard_check(vk_left) || keyboard_check(ord("A"))) {
     hsp = -move_speed;
@@ -25,47 +24,31 @@ if (keyboard_check(vk_down) || keyboard_check(ord("S"))) {
     vsp = move_speed;
 }
 
-// Apply the speeds to the player's position
-x += hsp;
-y += vsp;
-
 // Apply friction
 hsp *= 0.95; // Horizontal friction
 vsp *= 0.95; // Vertical friction
 
-
-
-
-
-if (place_meeting(x,y+1, oWall)) && (key_jump)
-{
-	vsp = 0;
-		
-}
-
-//Horizontal Collision
+// Horizontal Collision
 if (place_meeting(x+hsp,y,oWall))
 {
 	while (!place_meeting(x+sign(hsp),y,oWall))
 	{
-		x = x + sign(hsp);
+		x += sign(hsp);
 	}
 	hsp = 0;
 }
+x += hsp;
 
-x = x + hsp;
-
-
-//Vertical Collision
+// Vertical Collision
 if (place_meeting(x,y+vsp,oWall))
 {
 	while (!place_meeting(x,y+sign(vsp),oWall))
 	{
-		y = y + sign(vsp);
+		y += sign(vsp);
 	}
 	vsp = 0;
 }
-y = y + vsp;
+y += vsp;
 
 // State handling
 switch(state)
@@ -126,4 +109,20 @@ if (y < topBoundary) {
 if (y > bottomBoundary) {
     y = bottomBoundary;
 }
+
+// Check for collision with enemy
+if(place_meeting(x, y, oEnemy) || place_meeting(x, y, oEnemy2) || place_meeting(x, y, oEnemy3)) {
+    switch(state) {
+        case "normal":
+            // Player dies and level restarts
+            instance_destroy(); // Destroys the player.
+            room_restart();     // Restarts the current room.
+            break;
+        case "powered":
+            // Player destroys the enemy
+            instance_destroy(instance_place(x, y, oEnemy));
+            break;
+    }
+}
+
 
