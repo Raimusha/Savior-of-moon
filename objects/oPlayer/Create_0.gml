@@ -22,4 +22,6 @@ rightBoundary = room_width;
 topBoundary = 0;
 bottomBoundary = room_height;
 
+global.game_state = "playing";
+global.game_state = "game_over";
 

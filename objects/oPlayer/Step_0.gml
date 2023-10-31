@@ -116,7 +116,7 @@ if(place_meeting(x, y, oEnemy) || place_meeting(x, y, oEnemy2) || place_meeting(
         case "normal":
             // Player dies and level restarts
             instance_destroy(); // Destroys the player.
-            room_restart();     // Restarts the current room.
+            room_goto(rm_game_over);     // Restarts the current room.
             break;
         case "powered":
             // Player destroys the enemy
@@ -125,4 +125,40 @@ if(place_meeting(x, y, oEnemy) || place_meeting(x, y, oEnemy2) || place_meeting(
     }
 }
 
+
+if (place_meeting(x, y, oSpikes)) {
+    if (state == "normal") {
+        // Player dies and level restarts
+        instance_destroy(); // Destroys the player.
+        room_goto(rm_game_over);     // Restarts the current room.
+    } else if (state == "powered") {
+        // Player can move through spikes
+        // You can add any additional powered-up behaviors here
+    }
+}
+
+if (place_meeting(x, y, oLever)) {
+    if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("E"))) {  // Check if a key is pressed to interact
+        room_goto_next();  // Go to the next room
+    }
+}
+
+
+// Gameover state
+
+if (global.game_state == "playing") {
+    // Existing player movement and action code
+} else if (global.game_state == "game_over") {
+    hsp = 0;
+    vsp = 0;
+    
+    // Wait for the player to press Enter to restart
+    if (keyboard_check_pressed(vk_enter)) {
+        room_restart();  // Restart the current room
+        global.game_state = "playing";  // Set the game state back to playing
+        with (oGameOver) {
+            visible = false;  // Hide the game over message
+        }
+    }
+}
 
