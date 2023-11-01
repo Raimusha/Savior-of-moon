@@ -12,7 +12,7 @@ if (timer >= blinkRate) {
 
 
 if (keyboard_check_pressed(vk_enter)) {
-    room_goto_next();  // Replace "rm_game" with the name of your game room.
+    room_goto(Room1);  // Replace "rm_game" with the name of your game room.
 }
 
 

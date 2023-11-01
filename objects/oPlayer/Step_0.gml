@@ -163,11 +163,10 @@ if (player_state == "dying") {
 
 
 if (place_meeting(x, y, oLever)) {
-    if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("E"))) {  // Check if a key is pressed to interact
-		audio_play_sound(sndPlayerVictory, 3, false);
-        room_goto_next();  // Go to the next room
-    }
+    audio_play_sound(sndPlayerVictory, 3, false);
+    room_goto(rmTBD);  // Go to the next room
 }
+
 
 
 // Gameover state

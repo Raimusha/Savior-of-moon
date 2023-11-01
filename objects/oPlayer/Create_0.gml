@@ -5,7 +5,7 @@ hsp = 0;
 vsp = 0;
 //accel = 2;  // Reduced for smoother acceleration
 //friction = 0.1;
-move_speed = 5;
+move_speed = 10;
 // check for player movement
 isMoving = false;
 
