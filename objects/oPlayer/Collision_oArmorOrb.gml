@@ -1,6 +1,7 @@
 // Give player the power-up
 state = "powered";   // switch to powered state
 superArmor = true;
+audio_play_sound(sndPowerArmor, 3, false);
 
 // Destroy the oArmorOrb
 instance_destroy(other);  // "other" refers to the oArmorOrb in this collision event

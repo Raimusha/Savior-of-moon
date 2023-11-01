@@ -1,54 +1,53 @@
 /// @description Insert description here
 // You can write your code in this editor
 // Get player input
+// Get player input
 key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 key_up = keyboard_check(vk_up) || keyboard_check(ord("W"));
 key_down = keyboard_check(vk_down) || keyboard_check(ord("S"));
-key_jump = keyboard_check_pressed(vk_space);
 
 // Calculate Movement
-// Horizontal movement
-if (keyboard_check(vk_left) || keyboard_check(ord("A"))) {
-    hsp = -move_speed;
+var move_h = 0;
+var move_v = 0;
+
+if (key_left) {
+    move_h -= 1;
 }
-if (keyboard_check(vk_right) || keyboard_check(ord("D"))) {
-    hsp = move_speed;
+if (key_right) {
+    move_h += 1;
+}
+if (key_up) {
+    move_v -= 1;
+}
+if (key_down) {
+    move_v += 1;
 }
 
-// Vertical movement
-if (keyboard_check(vk_up) || keyboard_check(ord("W"))) {
-    vsp = -move_speed;
-}
-if (keyboard_check(vk_down) || keyboard_check(ord("S"))) {
-    vsp = move_speed;
-}
-
-// Apply friction
-hsp *= 0.95; // Horizontal friction
-vsp *= 0.95; // Vertical friction
+// Apply movement speed
+hsp = move_h * move_speed;
+vsp = move_v * move_speed;
 
 // Horizontal Collision
-if (place_meeting(x+hsp,y,oWall))
-{
-	while (!place_meeting(x+sign(hsp),y,oWall))
-	{
-		x += sign(hsp);
-	}
-	hsp = 0;
+if (!place_meeting(x + hsp, y, oWall)) {
+    x += hsp;
+} else {
+    while (!place_meeting(x + sign(hsp), y, oWall)) {
+        x += sign(hsp);
+    }
+    hsp = 0;
 }
-x += hsp;
 
 // Vertical Collision
-if (place_meeting(x,y+vsp,oWall))
-{
-	while (!place_meeting(x,y+sign(vsp),oWall))
-	{
-		y += sign(vsp);
-	}
-	vsp = 0;
+if (!place_meeting(x, y + vsp, oWall)) {
+    y += vsp;
+} else {
+    while (!place_meeting(x, y + sign(vsp), oWall)) {
+        y += sign(vsp);
+    }
+    vsp = 0;
 }
-y += vsp;
+
 
 // State handling
 switch(state)
@@ -110,35 +109,62 @@ if (y > bottomBoundary) {
     y = bottomBoundary;
 }
 
-// Check for collision with enemy
-if(place_meeting(x, y, oEnemy) || place_meeting(x, y, oEnemy2) || place_meeting(x, y, oEnemy3)) {
+// Check for collision with any enemy
+var enemy = instance_place(x, y, oEnemyParent);
+if (enemy != noone) {
     switch(state) {
         case "normal":
-            // Player dies and level restarts
-            instance_destroy(); // Destroys the player.
-            room_goto(rm_game_over);     // Restarts the current room.
+            // Player dies
+            player_state = "dying";
+            death_alpha = 1;
+            
+            // Set an alarm for 3 seconds (assuming your room speed is 60 fps)
+            
+  
             break;
         case "powered":
             // Player destroys the enemy
-            instance_destroy(instance_place(x, y, oEnemy));
+            audio_play_sound(sndEnemyDeath, 10, false);
+            instance_destroy(enemy);
             break;
     }
 }
 
 
+
 if (place_meeting(x, y, oSpikes)) {
     if (state == "normal") {
-        // Player dies and level restarts
-        instance_destroy(); // Destroys the player.
-        room_goto(rm_game_over);     // Restarts the current room.
+       player_state = "dying";
+     
     } else if (state == "powered") {
         // Player can move through spikes
         // You can add any additional powered-up behaviors here
     }
 }
 
+// Manage player death state
+
+// Manage player death state
+if (player_state == "dying") {
+    if (alarm[1] == -1) { // Check if the alarm isn't already set
+        alarm[1] = 60; // Set alarm 1 to trigger after 3 seconds
+    }
+	audio_play_sound(sndPlayerDeath, 3, false);
+    death_alpha -= 0.02; // Adjust this value as needed to make the fade slower or faster
+    image_alpha = death_alpha;
+    
+    if (death_alpha <= 0) {
+        // At this point, the player has fully faded out, but we're waiting for the alarm to transition to the game over screen
+        // You could potentially add a 'waiting' state here if needed.
+    }
+} else {
+    // Other game logic...
+}
+
+
 if (place_meeting(x, y, oLever)) {
     if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("E"))) {  // Check if a key is pressed to interact
+		audio_play_sound(sndPlayerVictory, 3, false);
         room_goto_next();  // Go to the next room
     }
 }
@@ -153,12 +179,21 @@ if (global.game_state == "playing") {
     vsp = 0;
     
     // Wait for the player to press Enter to restart
+    if (player_state == "dying") {
+    // Existing code for the dying state...
+
+    // Wait for the player to press Enter to restart
     if (keyboard_check_pressed(vk_enter)) {
         room_restart();  // Restart the current room
         global.game_state = "playing";  // Set the game state back to playing
         with (oGameOver) {
             visible = false;  // Hide the game over message
         }
+        player_state = "alive";  // Reset the player state
+        death_alpha = 1;  // Reset the death alpha if necessary
+        image_alpha = 1;  // Reset the image alpha if necessary
     }
+}
+
 }
 

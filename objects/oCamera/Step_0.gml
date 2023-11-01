@@ -1,9 +1,13 @@
 // Step Event
-if (follow != noone)
-{
-	xTo = follow.x;
-	yTo = follow.y;
+if (instance_exists(oPlayer)) {
+    xTo = oPlayer.x;
+    yTo = oPlayer.y;
+    // Other camera following code
+} else {
+    // Optional: Code to handle the case when the player does not exist
+    // You might want to fix the camera's position, transition to a different room, etc.
 }
+
 
 x += (xTo - x) / 25;
 y += (yTo - y) / 25;
