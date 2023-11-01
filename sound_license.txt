@@ -1,0 +1,24 @@
+Sound and Music Credits for Savior of the Moon
+--------------------------------------------
+
+We gratefully acknowledge the talented individuals whose sound and music contributions have enhanced the auditory experience of our game.
+
+1. **Sound Effects:**
+   1.1 **S_Death_Slith_06.wav**
+      - Creator: Andromadax24
+
+   1.2 **CreatureTalk_2.wav**
+      - Creator: JeffNevington
+
+   1.3 **dash.wav**
+      - Creator: perduus
+
+   1.4 **Victory Sound 1.wav**
+      - Creator: SilverIllusionist
+
+2. **Background Music:**
+   2.1 **Sundays**
+      - Creator: Madatracker
+
+--------------------------------------------
+Document last updated on: Oct 31 2023
